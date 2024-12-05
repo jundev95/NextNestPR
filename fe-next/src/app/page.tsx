@@ -1,5 +1,6 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image';
+import styles from './page.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -45,6 +46,11 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+
+        {/* 버튼 추가 */}
+        <Link href="/test">
+          <button className={styles.button}>Go to Test Page</button>
+        </Link>
       </main>
       <footer className={styles.footer}>
         <a
