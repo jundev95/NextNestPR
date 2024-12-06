@@ -1,0 +1,21 @@
+### drizzle 관련
+drizzle.config.ts 파일은 root에 위치
+
+npx drizzle-kit push
+위 명령어를 통해서 수정 내용 DB에 바로 적용
+이건 마이그레이션 없이 DB에만 바로 적용하는 명령어임
+
+npx drizzle-kit generate
+npx drizzle-kit migrate
+위 명령어를 이용시, 마이그레이션 생성 / 마이그레이션 적용
+
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%';
+FLUSH PRIVILEGES;
+만약 DB admin 사용자 권한 문제면 새로 생성된 __drizzle_migrations 이 마이그레이션 테이블에 대한 내용일 테니 
+위 명령어 한 번 DB에서 돌려주자
+
+
+
+### 
+
+
