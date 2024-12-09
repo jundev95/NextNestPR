@@ -1,4 +1,8 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateTestDto } from './create-test.dto';
+import { IsOptional, IsString, MaxLength } from 'class-validator';
 
-export class UpdateTestDto extends PartialType(CreateTestDto) {}
+export class UpdateTestDto {
+  @IsOptional()
+  @IsString()
+  @MaxLength(255, { message: 'Content must not exceed 255 characters' })
+  content?: string;
+}

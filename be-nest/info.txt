@@ -16,6 +16,15 @@ FLUSH PRIVILEGES;
 
 
 
-### 
+### 추가 설치 모듈들
+- DTO 검증 관련
+npm install class-validator class-transformer
 
-
+main.js 에서 전역으로 pipe를 적용해서 컨트롤러에서 @ValidationPipe 필요없이 바로 DTO가져다 적용하면됨
+  @Patch(':id')
+  async update(
+    @Param('id') id: number, // URL 파라미터
+    @Body() updateTestDto: UpdateTestDto, // 바디 데이터
+    @Query('queryContent') queryContent?: string // 쿼리 파라미터
+  ) 
+이런식으로 url, 쿼리, 바디를 적용하면되고, 하나의 DTO로 처리하고자 하면 당연히 속성명이 같아 문제가 생기니 앞에 키워드를 붙이는 것도 방법이다.
